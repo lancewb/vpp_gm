@@ -31,7 +31,8 @@
   _ (8, AES_GCM_192, "aes-gcm-192") \
   _ (9, AES_GCM_256, "aes-gcm-256") \
   _ (10, DES_CBC, "des-cbc")        \
-  _ (11, 3DES_CBC, "3des-cbc")
+  _ (11, 3DES_CBC, "3des-cbc")      \
+  _ (12, SM4_CBC_128, "sm4-cbc-128")
 
 typedef enum
 {
@@ -53,7 +54,8 @@ typedef enum
   _ (3, SHA_256_96, "sha-256-96")   /* draft-ietf-ipsec-ciph-sha-256-00 */ \
   _ (4, SHA_256_128, "sha-256-128") /* RFC4868 */                          \
   _ (5, SHA_384_192, "sha-384-192") /* RFC4868 */                          \
-  _ (6, SHA_512_256, "sha-512-256")	/* RFC4868 */
+  _ (6, SHA_512_256, "sha-512-256")	/* RFC4868 */                          \
+  _ (7, SM3_256, "sm3-256")
 
 typedef enum
 {

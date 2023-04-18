@@ -48,6 +48,7 @@ static openssl_per_thread_data_t *per_thread_data = 0;
   _(cbc, AES_128_CTR, EVP_aes_128_ctr) \
   _(cbc, AES_192_CTR, EVP_aes_192_ctr) \
   _(cbc, AES_256_CTR, EVP_aes_256_ctr) \
+  _(cbc, SM4_128_CBC, EVP_sm4_cbc)
 
 #define foreach_openssl_hmac_op \
   _(MD5, EVP_md5) \
@@ -55,7 +56,8 @@ static openssl_per_thread_data_t *per_thread_data = 0;
   _(SHA224, EVP_sha224) \
   _(SHA256, EVP_sha256) \
   _(SHA384, EVP_sha384) \
-  _(SHA512, EVP_sha512)
+  _(SHA512, EVP_sha512) \
+  _(SM3, EVP_sm3)
 
 static_always_inline u32
 openssl_ops_enc_cbc (vlib_main_t * vm, vnet_crypto_op_t * ops[], u32 n_ops,

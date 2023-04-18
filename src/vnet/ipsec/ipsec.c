@@ -390,6 +390,12 @@ ipsec_init (vlib_main_t * vm)
   a->iv_size = a->block_size = 8;
   a->icv_size = 16;
 
+  a = im->crypto_algs + IPSEC_CRYPTO_ALG_SM4_CBC_128;
+  a->enc_op_id = VNET_CRYPTO_OP_SM4_128_CBC_ENC;
+  a->dec_op_id = VNET_CRYPTO_OP_SM4_128_CBC_DEC;
+  a->alg = VNET_CRYPTO_ALG_SM4_128_CBC;
+  a->iv_size = a->block_size = 16;
+
   vec_validate (im->integ_algs, IPSEC_INTEG_N_ALG - 1);
   ipsec_main_integ_alg_t *i;
 
@@ -421,6 +427,11 @@ ipsec_init (vlib_main_t * vm)
   i = &im->integ_algs[IPSEC_INTEG_ALG_SHA_512_256];
   i->op_id = VNET_CRYPTO_OP_SHA512_HMAC;
   i->alg = VNET_CRYPTO_ALG_HMAC_SHA512;
+  i->icv_size = 32;
+
+  i = &im->integ_algs[IPSEC_INTEG_ALG_SM3_256];
+  i->op_id = VNET_CRYPTO_OP_SM3_HMAC;
+  i->alg = VNET_CRYPTO_ALG_HMAC_SM3;
   i->icv_size = 32;
 
   vec_validate_aligned (im->ptd, vlib_num_workers (), CLIB_CACHE_LINE_BYTES);

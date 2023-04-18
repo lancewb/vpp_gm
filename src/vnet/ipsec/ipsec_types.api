@@ -35,6 +35,7 @@ enum ipsec_crypto_alg
   IPSEC_API_CRYPTO_ALG_AES_GCM_256,
   IPSEC_API_CRYPTO_ALG_DES_CBC,
   IPSEC_API_CRYPTO_ALG_3DES_CBC,
+  IPSEC_API_CRYPTO_ALG_SM4_CBC_128,
 };
 
 /*
@@ -55,6 +56,8 @@ enum ipsec_integ_alg
   IPSEC_API_INTEG_ALG_SHA_384_192,
   /* RFC4868 */
   IPSEC_API_INTEG_ALG_SHA_512_256,
+
+  IPSEC_API_INTEG_ALG_SM3_256,
 };
 
 enum ipsec_sad_flags
